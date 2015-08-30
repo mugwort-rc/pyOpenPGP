@@ -29,14 +29,17 @@ ext = Extension(name = "OpenPGP.__OpenPGP",
                 libraries = libraries,
                 library_dirs = library_dirs,
                 sources = sources,
-                extra_compile_args = ["-std=c++0x"])
+                extra_compile_args = ["-std=c++11"])
 
+compiler = "gcc"
+if "CC" in os.environ:
+    compiler = os.environ["CC"]
 # ccache
 for path in os.environ["PATH"].split(os.pathsep):
     path = path.strip('"')
     exe = os.path.join(path, "ccache")
     if os.path.isfile(exe) and os.access(exe, os.X_OK):
-        os.environ["CC"] = "ccache gcc"
+        os.environ["CC"] = "ccache {}".format(compiler)
         break
 
 setup(name = "pyOpenPGP",
