@@ -10,7 +10,7 @@ install:
 
 before_script:
   - export CC="gcc-4.8"
-  - export CXX="g++-4.8"
+  - export CXX="g++-4.8 -fPIC"
   - wget https://github.com/mugwort-rc/OpenPGP/archive/pyOpenPGP.tar.gz -O /tmp/OpenPGP.tar.gz
   - tar zxf /tmp/OpenPGP.tar.gz
   - cd OpenPGP-pyOpenPGP/ && make && cd ..
