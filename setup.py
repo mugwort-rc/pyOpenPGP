@@ -29,7 +29,7 @@ ext = Extension(name = "OpenPGP.__OpenPGP",
                 libraries = libraries,
                 library_dirs = library_dirs,
                 sources = sources,
-                extra_compile_args = ["-std=c++11"])
+                extra_compile_args = ["-std=c++0x"])
 
 # ccache
 for path in os.environ["PATH"].split(os.pathsep):
