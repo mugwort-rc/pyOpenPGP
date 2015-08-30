@@ -9,7 +9,7 @@ install:
   - sudo apt-get install -y libgmp-dev libbz2-dev zlib1g-dev libzip-dev libboost-python-dev
 
 before_script:
-  - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8"; fi
+  - export CXX="g++-4.8"
   - wget https://github.com/mugwort-rc/OpenPGP/archive/pyOpenPGP.tar.gz -O /tmp/OpenPGP.tar.gz
   - tar zxf /tmp/OpenPGP.tar.gz
   - cd OpenPGP-pyOpenPGP/ && make && cd ..
