@@ -6,7 +6,9 @@ before_script:
   - sudo apt-get install -y libgmp-dev libbz2-dev zlib1g-dev libzip-dev libboost-python-dev
   - wget https://github.com/mugwort-rc/OpenPGP/archive/pyOpenPGP.tar.gz -O /tmp/OpenPGP.tar.gz
   - tar zxf /tmp/OpenPGP.tar.gz
-  - cd OpenPGP-pyOpenPGP/ && make install && cd ..
+  - cd OpenPGP-pyOpenPGP/ && make && cd ..
+  - sudo mv OpenPGP-pyOpenPGP/libOpenPGP.a /usr/local/lib
+  - sudo ln -s $PWD/OpenPGP-pyOpenPGP/ /usr/local/include/OpenPGP
 
 script:
   - python setup.py -q install
