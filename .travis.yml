@@ -2,8 +2,13 @@ language: python
 python:
   - "2.7"
 
-before_script:
+install:
+  - sudo add-apt-repository --yes ppa:ubuntu-toolchain-r/test
+  - sudo apt-get -qq update
+  - sudo apt-get -qq install g++-4.8
   - sudo apt-get install -y libgmp-dev libbz2-dev zlib1g-dev libzip-dev libboost-python-dev
+
+before_script:
   - wget https://github.com/mugwort-rc/OpenPGP/archive/pyOpenPGP.tar.gz -O /tmp/OpenPGP.tar.gz
   - tar zxf /tmp/OpenPGP.tar.gz
   - cd OpenPGP-pyOpenPGP/ && make && cd ..
