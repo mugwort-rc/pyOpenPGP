@@ -19,7 +19,7 @@ boost::python::def("rawtompi", &rawtompi);
 boost::python::def("invert", &invert);
 boost::python::def("mpitodec", &mpitodec);
 boost::python::def("mpigcd", &mpigcd);
-boost::python::def("random", &random);
+boost::python::def("random", static_cast<PGPMPI(*)(unsigned int)>(&random));
 boost::python::def("mpitohex", &mpitohex);
 boost::python::def("nextprime", &nextprime);
 }

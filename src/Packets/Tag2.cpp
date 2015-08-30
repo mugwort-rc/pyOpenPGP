@@ -34,6 +34,6 @@ boost::python::class_<Tag2, boost::python::bases<Packet>>("Tag2")
     .def("set_unhashed_subpackets", &Tag2::set_unhashed_subpackets)
     .def("find_subpacket", &Tag2::find_subpacket)
     .def("clone", &Tag2::clone)
-    .def("operator=", &Tag2::operator=)
+    //.def("operator=", &Tag2::operator=)
     ;
 }
